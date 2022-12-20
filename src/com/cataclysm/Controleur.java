@@ -24,5 +24,7 @@ public class Controleur {
         else{
             builderCarte = new BuilderCarte(new CarteImporte(new File("carte.txt")));
         }
+
+        System.out.println(builderCarte);
     }
 }

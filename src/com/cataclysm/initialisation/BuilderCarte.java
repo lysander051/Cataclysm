@@ -19,4 +19,9 @@ public class BuilderCarte {
         x = taille[0];
         y = taille[1];
     }
+
+    @Override
+    public String toString() {
+        return carteGenere.toString();
+    }
 }

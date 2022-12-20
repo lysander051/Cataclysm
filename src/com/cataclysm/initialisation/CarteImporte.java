@@ -9,16 +9,18 @@ public class CarteImporte extends CarteGenere{
     public CarteImporte(File file){
         try {
             Scanner scanner = new Scanner(file);
-            y = scanner.nextInt();
-            x = scanner.nextInt();
-            carte = new ArrayList<>(y);
-            for (int i = 0; i < y; i++) {
-                carte.add(new ArrayList<>());
-                while (scanner.hasNextLine()) {
-                    String data = scanner.nextLine();
-                    for (int j = 0; j < data.length(); j++) {
-                        carte.get(i).add(data.charAt(j));
-                    }
+            this.y = scanner.nextInt();
+            this.x = scanner.nextInt();
+            scanner.nextLine();
+            this.carte = new ArrayList<>();
+            for (int i = 0; i < this.y; i++) {
+                this.carte.add(new ArrayList<>());
+                String data = scanner.nextLine();
+                for (int j = 0; j < this.x; j++) {
+                    if (j < data.length())
+                        this.carte.get(i).add(data.charAt(j));
+                    else
+                        this.carte.get(i).add(' ');
                 }
             }
             scanner.close();
