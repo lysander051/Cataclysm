@@ -40,4 +40,17 @@ public class Ihm {
         scanner.close();
         return taille;
     }
+
+    public int choixTheme(){
+        Scanner scanner = new Scanner(System.in);
+        int choix;
+
+
+        System.out.println("\n\nQuelle theme preferez vous?");
+        System.out.println("1 - Theme foret");
+        System.out.println("2 - Theme jungle");
+        choix = scanner.nextInt();
+        return choix;
+
+    }
 }

@@ -10,7 +10,7 @@ public class CarteAleatoire extends CarteGenere{
         this.x = tailleCarte[0];
         this.y = tailleCarte[1];
 
-        char[] objets = {'A', 'B', 'M', 'C', 'E', 'G'};
+        char[] objets = {'A', 'B', 'M', 'C', 'E', 'G','R'};
         double range;
 
         this.carte = new ArrayList<>();

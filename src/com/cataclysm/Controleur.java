@@ -1,14 +1,15 @@
 package com.cataclysm;
 
-import com.cataclysm.initialisation.BuilderCarte;
-import com.cataclysm.initialisation.CarteAleatoire;
-import com.cataclysm.initialisation.CarteImporte;
+import com.cataclysm.initialisation.*;
+import com.cataclysm.partie.Carte;
 
 import java.io.File;
+import java.sql.SQLOutput;
 
 public class Controleur {
     Ihm ihm;
     BuilderCarte builderCarte;
+    Carte carte;
 
     public Controleur(){
         this.ihm = new Ihm();
@@ -24,7 +25,16 @@ public class Controleur {
         else{
             builderCarte = new BuilderCarte(new CarteImporte(new File("carte.txt")));
         }
-
+        if(ihm.choixTheme()==1){
+            builderCarte=builderCarte.theme(new ThemeForet());
+        }
+        else{
+            builderCarte=builderCarte.theme(new ThemeJungle());
+        }
+        carte = builderCarte.build();
+        System.out.println(" LA CARTE STRING AU DEBUT");
         System.out.println(builderCarte);
+        System.out.println("LA CARTE STRING AVEC THEME");
+        System.out.println(carte);
     }
 }
