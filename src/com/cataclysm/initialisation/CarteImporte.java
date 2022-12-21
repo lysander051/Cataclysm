@@ -9,6 +9,8 @@ public class CarteImporte extends CarteGenere{
     public CarteImporte(File file){
         try {
             Scanner scanner = new Scanner(file);
+            // A REMPLACER CAR DANS LA NOUVELLE CARTE C'EST ECRIT FORET
+            scanner.nextLine();
             this.y = scanner.nextInt();
             this.x = scanner.nextInt();
             scanner.nextLine();
